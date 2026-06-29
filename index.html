@@ -1,19 +1,178 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Deltosks | PRO STREAM HUB</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Deltosks | Abyss Stream Hub</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+  color: white;
+}
+
+/* ===== BACKGROUND ===== */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("bg.jpg") center/cover;
+  filter: brightness(0.6) contrast(1.2);
+  animation: zoom 20s infinite alternate;
+}
+
+@keyframes zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* ===== FOG ===== */
+.fog {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  opacity: 0.12;
+  animation: fog 60s linear infinite;
+}
+
+@keyframes fog {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===== CENTER ===== */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* ===== TITLE ===== */
+h1 {
+  font-size: 60px;
+  color: #b30000;
+  letter-spacing: 8px;
+  text-shadow: 0 0 20px black;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px red; }
+  to { text-shadow: 0 0 35px red; }
+}
+
+/* ===== NAV ===== */
+nav {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+nav button {
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #b30000;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #b30000;
+  box-shadow: 0 0 25px red;
+}
+
+/* ===== PANELS ===== */
+.tab {
+  margin-top: 20px;
+  padding: 18px;
+
+  width: 100%;
+  max-width: 600px;
+
+  background: rgba(0,0,0,0.65);
+  border: 3px solid #b30000;
+  backdrop-filter: blur(6px);
+
+  display: none;
+  text-align: center;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  box-shadow: 0 0 20px rgba(179,0,0,0.2);
+}
+
+.tab.active {
+  display: block;
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SOCIAL + DONATE ===== */
+.social-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-btn, .donate-btn {
+  display: block;
+  padding: 12px;
+  border: 2px solid #b30000;
+  color: white;
+  text-decoration: none;
+  background: rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.social-btn:hover, .donate-btn:hover {
+  background: #b30000;
+  box-shadow: 0 0 25px red;
+}
+
+/* ===== FIRE ===== */
+canvas {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+}
+</style>
 </head>
 
 <body>
 
 <div class="bg"></div>
+<div class="fog"></div>
 
-<header>
-  <h1>⚔️ DELTOSKS</h1>
-  <p>PRO Glass Stream Hub</p>
-</header>
+<div class="center">
+
+<h1>DELTOSKS</h1>
 
 <nav>
   <button onclick="show('home')">Главная</button>
@@ -24,126 +183,133 @@
   <button onclick="show('rules')">Правила</button>
 </nav>
 
-<main>
-
-  <!-- HOME -->
-  <section id="home" class="tab active">
-    <h2>🔥 Добро пожаловать</h2>
-    <p>
-      Приветствую всех и добро пожаловать на мой канал!<br><br>
-
-      Имя: Михаил (Delto)<br>
-      Игры: от старых до новинок<br>
-      Стримы: когда захочу<br><br>
-
-      Подписывайся 💀
-    </p>
-  </section>
-
-  <!-- PC -->
-  <section id="pc" class="tab">
-
-    <h2>💻 Стрим ПК</h2>
-
-    <p>■ Процессор: i7 12th 12700KF</p>
-    <p>■ Мат плата: MSI PRO Z790-P Wifi</p>
-    <p>■ ОЗУ: 16 GB Kingston FURY DDR5</p>
-    <p>■ Видеокарта: RTX 5060 Ti 16G</p>
-    <p>■ Карта захвата: AVerMedia Live Gamer DUO</p>
-    <p>■ SSD: Samsung 860 EVO</p>
-
-    <br>
-
-    <h2>🎮 Игровой ПК</h2>
-
-    <p>■ Процессор: Ryzen 7 7800X3D</p>
-    <p>■ Мат плата: MSI B850 GAMING PLUS WIFI</p>
-    <p>■ ОЗУ: 32 GB Kingston FURY DDR5</p>
-    <p>■ Видеокарта: RTX 4080 Super 16G</p>
-    <p>■ SSD: Samsung 860 EVO</p>
-
-  </section>
-
-  <!-- DEVICES -->
-  <section id="devices" class="tab">
-
-    <h2>🎧 Устройства</h2>
-
-    <p>■ Монитор: LG UltraGear 32GN650</p>
-    <p>■ Микрофон: Shure MV7X</p>
-    <p>■ Webcam: Razer Kiyo</p>
-    <p>■ Звуковая карта: GO XLR</p>
-    <p>■ ОС: Windows 11</p>
-
-    <br>
-
-    <h2>🎮 Консоли</h2>
-    <p>■ PlayStation 5</p>
-
-  </section>
-
-  <!-- SOCIAL (RPG BUTTONS) -->
-  <section id="social" class="tab">
-
-    <h2>📡 Соцсети</h2>
-
-    <div class="social-grid">
-
-      <a class="social-btn" href="https://discord.com/invite/yGZmTkaqVJ" target="_blank">
-        💬 Discord
-      </a>
-
-      <a class="social-btn" href="https://www.twitch.tv/deltosks" target="_blank">
-        🎮 Twitch
-      </a>
-
-      <a class="social-btn" href="https://www.youtube.com/@Deltosks" target="_blank">
-        ▶ YouTube
-      </a>
-
-      <a class="social-btn" href="https://live.vkvideo.ru/deltosks" target="_blank">
-        📺 VK Live
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- DONATE -->
-  <section id="donate" class="tab">
-
-  <h2>💰 Донат</h2>
-
-  <p>Поддержать стрим:</p>
-
-  <a class="donate-btn" href="https://www.donationalerts.com/r/deltosks" target="_blank">
-    💰 Перейти к донату
-  </a>
-
+<!-- HOME -->
+<section id="home" class="tab active">
+  <h2>🔥 Добро пожаловать 🔥</h2>
+  <p>
+    Привет! Меня зовут Михаил (Delto).<br><br>
+    Это мой стрим-канал с играми, эмоциями и тёмной атмосферой.<br><br>
+  </p>
 </section>
 
-  <!-- RULES -->
-  <section id="rules" class="tab">
+<!-- PC -->
+<section id="pc" class="tab">
+  <h2>💻 Стрим ПК</h2>
 
-    <h2>📜 Правила</h2>
+  <p>■ Процессор: i7 12th 12700KF</p>
+  <p>■ Мат плата: MSI PRO Z790-P Wifi</p>
+  <p>■ ОЗУ: 16 GB Kingston FURY DDR5</p>
+  <p>■ Видеокарта: RTX 5060 Ti 16G</p>
+  <p>■ Карта захвата: AVerMedia Live Gamer DUO</p>
+  <p>■ Жесткие диски: SSD Samsung 860 EVO</p>
 
-    <p>• Без токсичности</p>
-    <p>• Без спама</p>
-    <p>• Уважение чата</p>
-    <p>• Без спойлеров</p>
-    <p>• Уважай выбор игр</p>
+  <br>
 
-  </section>
+  <h2>🎮 Игровой ПК</h2>
 
-</main>
+  <p>■ Процессор: Ryzen 7 7800X3D</p>
+  <p>■ Мат плата: MSI B850 GAMING PLUS WIFI</p>
+  <p>■ ОЗУ: 32 GB Kingston FURY DDR5</p>
+  <p>■ Видеокарта: Nvidia RTX 4080 Super 16G</p>
+  <p>■ Жесткие диски: SSD Samsung 860 EVO</p>
+</section>
+
+<!-- DEVICES -->
+<section id="devices" class="tab">
+  <h2>🎧 Устройства</h2>
+
+  <p>■ Монитор: LG UltraGear 32GN650</p>
+  <p>■ Микрофон: Shure MV7X</p>
+  <p>■ Webcam: Razer Kiyo</p>
+  <p>■ Звуковая карта: GO XLR</p>
+  <p>■ Операционная система: Windows 11</p>
+
+  <br>
+
+  <h2>🎮 Консоли</h2>
+
+  <p>■ PlayStation 5</p>
+</section>
+
+<!-- SOCIAL -->
+<section id="social" class="tab">
+  <h2>📡 Соцсети</h2>
+
+  <div class="social-grid">
+  <a class="social-btn" href="https://discord.com/invite/yGZmTkaqVJ" target="_blank" rel="noopener noreferrer">Discord</a>
+
+  <a class="social-btn" href="https://www.twitch.tv/deltosks" target="_blank" rel="noopener noreferrer">Twitch</a>
+
+  <a class="social-btn" href="https://www.youtube.com/@Deltosks/featured" target="_blank" rel="noopener noreferrer">YouTube</a>
+
+  <a class="social-btn" href="https://vkvideo.ru/@deltosks/live" target="_blank" rel="noopener noreferrer">VK Live</a>
+</div>
+</section>
+
+<!-- DONATE -->
+<section id="donate" class="tab">
+  <h2>💰 Донат</h2>
+  <a class="donate-btn" href="https://new.donatepay.ru/en/@558530" target="_blank">Поддержать стрим</a>
+</section>
+
+<!-- RULES -->
+<section id="rules" class="tab">
+  <h2>📜 Правила</h2>
+  <p>• Без токсичности</p>
+  <p>• Без спама</p>
+  <p>• Уважение</p>
+  <p>• Без спойлеров</p>
+</section>
+
+</div>
+
+<canvas id="fire"></canvas>
 
 <script>
-function show(id) {
-  document.querySelectorAll('.tab')
-    .forEach(t => t.classList.remove('active'));
-
+function show(id){
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
+
+/* FIRE EFFECT */
+const canvas = document.getElementById("fire");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<120;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: canvas.height - Math.random()*200,
+    size: Math.random()*4,
+    speed: Math.random()*2+1
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  for(let p of particles){
+    ctx.fillStyle = "rgba(255,80,0,0.6)";
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fill();
+
+    p.y -= p.speed;
+    p.x += Math.sin(p.y*0.01);
+
+    if(p.y < canvas.height-300){
+      p.y = canvas.height;
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
 </script>
 
 </body>
