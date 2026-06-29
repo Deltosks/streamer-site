@@ -2,71 +2,149 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Deltosks Stream Hub</title>
+  <title>Deltosks | PRO STREAM HUB</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="bg"></div>
+<div class="bg"></div>
 
-  <header>
-    <h1>⚔️ DELTOSKS HUB</h1>
-    <p>Темный портал стримера</p>
-  </header>
+<header>
+  <h1>⚔️ DELTOSKS</h1>
+  <p>PRO Glass Stream Hub</p>
+</header>
 
-  <!-- МЕНЮ -->
-  <nav>
-    <button onclick="showTab('home')">Главная</button>
-    <button onclick="showTab('pc')">ПК</button>
-    <button onclick="showTab('social')">Соцсети</button>
-    <button onclick="showTab('donate')">Донат</button>
-    <button onclick="showTab('rules')">Правила</button>
-  </nav>
+<nav>
+  <button onclick="show('home')">Главная</button>
+  <button onclick="show('pc')">ПК</button>
+  <button onclick="show('devices')">Устройства</button>
+  <button onclick="show('social')">Соцсети</button>
+  <button onclick="show('donate')">Донат</button>
+  <button onclick="show('rules')">Правила</button>
+</nav>
 
-  <!-- КОНТЕНТ -->
+<main>
 
-  <main>
+  <!-- HOME -->
+  <section id="home" class="tab active">
+    <h2>🔥 Добро пожаловать</h2>
+    <p>
+      Приветствую всех и добро пожаловать на мой канал!<br><br>
 
-    <section id="home" class="tab active">
-      <h2>🔥 Добро пожаловать</h2>
-      <p>Это мой стримерский портал. Здесь ты найдёшь всё обо мне и стримах.</p>
-    </section>
+      Имя: Михаил (Delto)<br>
+      Игры: от старых до новинок<br>
+      Стримы: когда захочу<br><br>
 
-    <section id="pc" class="tab">
-      <h2>💻 Конфигурация ПК</h2>
-      <ul>
-        <li>CPU: Ryzen 5 5600X</li>
-        <li>GPU: RTX 3060</li>
-        <li>RAM: 16GB DDR4</li>
-        <li>SSD: 1TB NVMe</li>
-      </ul>
-    </section>
+      Подписывайся 💀
+    </p>
+  </section>
 
-    <section id="social" class="tab">
-      <h2>📱 Соцсети</h2>
-      <p>Twitch: твой ник</p>
-      <p>YouTube: ссылка</p>
-      <p>Discord: ссылка</p>
-    </section>
+  <!-- PC -->
+  <section id="pc" class="tab">
 
-    <section id="donate" class="tab">
-      <h2>💰 Донат</h2>
-      <p>Поддержать стрим: https://donationalerts.com</p>
-    </section>
+    <h2>💻 Стрим ПК</h2>
 
-    <section id="rules" class="tab">
-      <h2>📜 Правила</h2>
-      <p>1. Без токсичности</p>
-      <p>2. Без спама</p>
-      <p>3. Уважай чат</p>
-    </section>
+    <p>■ Процессор: i7 12th 12700KF</p>
+    <p>■ Мат плата: MSI PRO Z790-P Wifi</p>
+    <p>■ ОЗУ: 16 GB Kingston FURY DDR5</p>
+    <p>■ Видеокарта: RTX 5060 Ti 16G</p>
+    <p>■ Карта захвата: AVerMedia Live Gamer DUO</p>
+    <p>■ SSD: Samsung 860 EVO</p>
 
-  </main>
+    <br>
 
-  <footer>
-    <p>© Deltosks Stream Hub</p>
-  </footer>
+    <h2>🎮 Игровой ПК</h2>
 
-  <script src="script.js"></script>
+    <p>■ Процессор: Ryzen 7 7800X3D</p>
+    <p>■ Мат плата: MSI B850 GAMING PLUS WIFI</p>
+    <p>■ ОЗУ: 32 GB Kingston FURY DDR5</p>
+    <p>■ Видеокарта: RTX 4080 Super 16G</p>
+    <p>■ SSD: Samsung 860 EVO</p>
+
+  </section>
+
+  <!-- DEVICES -->
+  <section id="devices" class="tab">
+
+    <h2>🎧 Устройства</h2>
+
+    <p>■ Монитор: LG UltraGear 32GN650</p>
+    <p>■ Микрофон: Shure MV7X</p>
+    <p>■ Webcam: Razer Kiyo</p>
+    <p>■ Звуковая карта: GO XLR</p>
+    <p>■ ОС: Windows 11</p>
+
+    <br>
+
+    <h2>🎮 Консоли</h2>
+    <p>■ PlayStation 5</p>
+
+  </section>
+
+  <!-- SOCIAL (RPG BUTTONS) -->
+  <section id="social" class="tab">
+
+    <h2>📡 Соцсети</h2>
+
+    <div class="social-grid">
+
+      <a class="social-btn" href="https://discord.com/invite/yGZmTkaqVJ" target="_blank">
+        💬 Discord
+      </a>
+
+      <a class="social-btn" href="https://www.twitch.tv/deltosks" target="_blank">
+        🎮 Twitch
+      </a>
+
+      <a class="social-btn" href="https://www.youtube.com/@Deltosks" target="_blank">
+        ▶ YouTube
+      </a>
+
+      <a class="social-btn" href="https://live.vkvideo.ru/deltosks" target="_blank">
+        📺 VK Live
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- DONATE -->
+  <section id="donate" class="tab">
+
+  <h2>💰 Донат</h2>
+
+  <p>Поддержать стрим:</p>
+
+  <a class="donate-btn" href="https://www.donationalerts.com/r/deltosks" target="_blank">
+    💰 Перейти к донату
+  </a>
+
+</section>
+
+  <!-- RULES -->
+  <section id="rules" class="tab">
+
+    <h2>📜 Правила</h2>
+
+    <p>• Без токсичности</p>
+    <p>• Без спама</p>
+    <p>• Уважение чата</p>
+    <p>• Без спойлеров</p>
+    <p>• Уважай выбор игр</p>
+
+  </section>
+
+</main>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.tab')
+    .forEach(t => t.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
 </body>
 </html>
