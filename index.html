@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Deltosks Stream Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <header>
+    <h1>⚔️ DELTOSKS HUB</h1>
+    <p>Темный портал стримера</p>
+  </header>
+
+  <!-- МЕНЮ -->
+  <nav>
+    <button onclick="showTab('home')">Главная</button>
+    <button onclick="showTab('pc')">ПК</button>
+    <button onclick="showTab('social')">Соцсети</button>
+    <button onclick="showTab('donate')">Донат</button>
+    <button onclick="showTab('rules')">Правила</button>
+  </nav>
+
+  <!-- КОНТЕНТ -->
+
+  <main>
+
+    <section id="home" class="tab active">
+      <h2>🔥 Добро пожаловать</h2>
+      <p>Это мой стримерский портал. Здесь ты найдёшь всё обо мне и стримах.</p>
+    </section>
+
+    <section id="pc" class="tab">
+      <h2>💻 Конфигурация ПК</h2>
+      <ul>
+        <li>CPU: Ryzen 5 5600X</li>
+        <li>GPU: RTX 3060</li>
+        <li>RAM: 16GB DDR4</li>
+        <li>SSD: 1TB NVMe</li>
+      </ul>
+    </section>
+
+    <section id="social" class="tab">
+      <h2>📱 Соцсети</h2>
+      <p>Twitch: твой ник</p>
+      <p>YouTube: ссылка</p>
+      <p>Discord: ссылка</p>
+    </section>
+
+    <section id="donate" class="tab">
+      <h2>💰 Донат</h2>
+      <p>Поддержать стрим: https://donationalerts.com</p>
+    </section>
+
+    <section id="rules" class="tab">
+      <h2>📜 Правила</h2>
+      <p>1. Без токсичности</p>
+      <p>2. Без спама</p>
+      <p>3. Уважай чат</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© Deltosks Stream Hub</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
