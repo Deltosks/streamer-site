@@ -1,4 +1,23 @@
 body {
+  /* ICON TEXT */
+.icon {
+  margin-right: 8px;
+}
+
+/* TWITCH SVG ICON */
+.icon-svg {
+  width: 18px;
+  height: 18px;
+  fill: #c9a24b;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT FOR SVG */
+.social-btn:hover .icon-svg {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(201,162,75,0.7));
+}
   margin: 0;
   font-family: Arial;
   background: radial-gradient(circle at center, #0f0f0f, #000);
